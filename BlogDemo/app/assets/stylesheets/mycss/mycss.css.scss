@@ -1,0 +1,34 @@
+$light-gray: #777;
+$border-color: #eaeaea;
+body {
+	padding-top: 80px;
+}
+h1 {
+	text-align: center;
+}
+
+/*header*/
+
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	letter-spacing: -1px;
+	padding-top: 10px;
+}
+#logo:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+#menu-top li {
+	cursor: pointer;
+}
+
+.footer {
+	margin-top: 40px;
+	padding-top: 10px;
+	border-top: 1px solid $border-color;
+	color: $light-gray;
+}

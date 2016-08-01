@@ -18,3 +18,13 @@
 	}
 }
 
+.list-users{
+	list-style: none;
+	margin: 0px;
+
+}
+.list-users li {
+	overflow: auto;
+	padding: 10px 0;
+	border-bottom: 1px solid #777;
+}

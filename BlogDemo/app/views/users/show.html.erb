@@ -1,12 +1,30 @@
 <%= provide(:title, @user.name )  %>
 <div class="row">
-	<div class="col-lg-4" style="text-align:left">
-		<h1>
-			<%= gravatar_for @user  %>
-			<%= @user.name  %>
-		</h1>
+	<div class="col-lg-4" >
+		<section>
+			<h1 style="text-align:left">
+				<%= gravatar_for @user  %>
+				<%= @user.name  %>
+			</h1>
+		</section>
+		<section>
+			<%= render "shared/stats"  %>
+		</section>
 	</div>
-	<div class="col-lg-8"></div>
+	<div class="col-lg-8">
+		<section>
+			<%= render "shared/follow_form" if logged_in?  %>
+		</section>
+		<section>
+			<% if @user.entries.any? %>
+				<h3>Entries (<%= @user.entries.count  %>)</h3>
+				<ul class="list-entry">
+					<%= render @entries  %>
+				</ul>
+				<%= will_paginate @entries  %>
+			<% end %>
+		</section>
+	</div>
 </div>
 
 

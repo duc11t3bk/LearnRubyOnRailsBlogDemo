@@ -1,0 +1,19 @@
+<%= provide(:title,"Entry")  %>
+<div class="row">
+	<div class="col-lg-offset-2 col-lg-8">
+		<div class="col-lg-12">
+			<h1><%= @entry.title  %></h1>
+		</div>
+		<div class="col-lg-12">
+			<p class="entry-body"><%= @entry.body  %></p>
+		</div>
+		<div class="col-lg-12">
+			<span class="timestamp" style="float:left">Author: <%= @user.name  %></span>
+			<span class="timestamp" style="float: right	">Created at: <%= time_ago_in_words(@entry.created_at)  %> ago</span>
+		</div>
+		<div class="col-lg-12" style="padding-top:50px;">
+			<label>Comments</label>
+			<hr style="margin-top:5px;">
+		</div>
+	</div>
+</div>

@@ -32,3 +32,23 @@ h1 {
 	border-top: 1px solid $border-color;
 	color: $light-gray;
 }
+
+/*user home list entry*/
+.entry-title {
+	font-size: 20px;
+	font-weight: bold;
+}
+.timestamp {
+	color: $light-gray;	
+}
+.entry-body {
+	color: $light-gray;
+}
+.list-entry{
+	list-style: none;
+	padding: 0px;
+}
+.list-entry li {
+	border-top: 1px solid $border-color;
+	padding: 10px 0;
+}

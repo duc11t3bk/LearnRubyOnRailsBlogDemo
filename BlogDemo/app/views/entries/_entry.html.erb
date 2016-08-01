@@ -1,9 +1,19 @@
-<li id="entry-<%= entry.id%>">
-	<%= link_to gravatar_for(entry.user), entry.user  %>
-	<span class="user-infor"><%= link_to entry.user.name, entry.user  %></span>
-	<span class="entry-title"><%= entry.title  %></span>
-	<span class="entry-body"><%= entry.body  %></span>
-	<span class="timestamp">
-		Posted <%= time_ago_in_words(entry.created_at)  %> ago
-	</span>
+<li id="entry-<%= entry.id%>" class="col-lg-12">
+	<div class="col-lg-2" style="padding:0px; text-align: right">
+		<%= link_to gravatar_for(entry.user), entry.user  %>
+		<span class="user-infor"><%= link_to entry.user.name, entry.user  %></span>		
+	</div>
+	<div class="col-lg-10" style="padding:0px;">
+		<div class="col-lg-12" >
+			<span class="entry-title"><%= entry.title  %></span>
+		</div>
+		<div class="col-lg-12">
+			<span class="entry-body"><%= entry.body  %></span>		
+		</div>
+		<div class="col-lg-12">
+			<span class="timestamp">
+				Posted <%= time_ago_in_words(entry.created_at)  %> ago
+			</span>	
+		</div>
+	</div>
 </li>

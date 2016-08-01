@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
 	before_action :logged_in_user
 
 	def new
-
+		@entry= Entry.new
 	end
 	
 	def show
@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
 		else
 			render root_path
 		end
-
+	end
 	def destroy
 		
 	end

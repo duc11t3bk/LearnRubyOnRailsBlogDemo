@@ -5,4 +5,9 @@ class Entry < ActiveRecord::Base
   validates :user_id, presence: true
   validates :body, presence: true
   validates :title, presence: true
+
+
+  def getComments
+  	return Comment.where("entry_id = ? ", id)
+  end
 end

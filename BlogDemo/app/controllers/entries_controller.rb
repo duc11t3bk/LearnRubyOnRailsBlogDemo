@@ -8,6 +8,8 @@ class EntriesController < ApplicationController
 	def show
 		@entry= Entry.find(params[:id])
 		@user= @entry.user
+		@comment= @user.comments.build
+		@comments= @entry.getComments.paginate(page: params[:page])
 	end
 
 	def create

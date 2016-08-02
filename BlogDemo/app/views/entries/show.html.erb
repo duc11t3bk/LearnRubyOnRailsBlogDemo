@@ -11,9 +11,33 @@
 			<span class="timestamp" style="float:left">Author: <%= @user.name  %></span>
 			<span class="timestamp" style="float: right	">Created at: <%= time_ago_in_words(@entry.created_at)  %> ago</span>
 		</div>
-		<div class="col-lg-12" style="padding-top:50px;">
+		<div class="col-lg-12" style="padding-top:50px; padding-bottom: 20px;">
 			<label>Comments</label>
-			<hr style="margin-top:5px;">
+		</div>
+		<% if logged_in? %>
+		<div class="col-lg-12">
+			<%= form_for(@comment) do |f|  %>
+				<%= render "shared/error_messages", object: f.object  %>
+				<%= f.hidden_field :entry_id, value: @entry.id %>
+				<div class="col-lg-10" style="padding:0px;">
+					<%= f.text_field :content, placeholder: "comments here...", class: "form-control" %>
+				</div>
+				<%= f.submit "Send", class: "btn btn-primary col-lg-2"  %>
+			<% end %>
+		</div>
+		<% end %>
+		<div class="col-lg-12">
+			<% if @comments.any? %>
+			<ul class="list-entry">
+				<% @comments.each do |comment|  %>
+				<li>
+					<span style="font-weight:bold"><%= comment.user.name  %></span>
+					<span class="entry-body"><%= comment.content  %> </span>
+					<span class="timestamp" style="float:right">Posted <%= time_ago_in_words(comment.created_at)  %> ago </span>
+				</li>
+				<% end %>
+			</ul>
+			<% end %>
 		</div>
 	</div>
 </div>

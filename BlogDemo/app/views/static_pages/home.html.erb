@@ -15,13 +15,17 @@
 		</aside>
 		<div class="col-lg-8">
 			<h3>Entry Feed</h3>
-			<%= render "shared/feed"  %>
+			<ul class="list-entry">
+				<%= render @entries  %>	
+			</ul>
 		</div>
 	</div>
 <% else %>
 	<div class="row">
-		<div class="col-lg-offset-2 col-lg-8 list-entry">
-			<%= render @entries  %>
+		<div class="col-lg-offset-2 col-lg-8">
+			<ul class="list-entry">
+				<%= render @entries  %>
+			</ul>
 		</div>
 	</div>
 <% end %>

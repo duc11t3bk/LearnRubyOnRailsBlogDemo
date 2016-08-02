@@ -16,12 +16,12 @@
 			<%= render "shared/follow_form" if logged_in?  %>
 		</section>
 		<section>
-			<% if @user.entries.any? %>
-				<h3>Entries (<%= @user.entries.count  %>)</h3>
+			<% if @feed_items.any? %>
+				<h3>Entries (<%= @feed_items.count  %>)</h3>
 				<ul class="list-entry">
-					<%= render @entries  %>
+					<%= render @feed_items  %>
 				</ul>
-				<%= will_paginate @entries  %>
+				<%= will_paginate @feed_items  %>
 			<% end %>
 		</section>
 	</div>

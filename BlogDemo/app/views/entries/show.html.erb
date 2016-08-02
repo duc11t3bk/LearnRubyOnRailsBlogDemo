@@ -8,8 +8,7 @@
 			<p class="entry-body"><%= @entry.body  %></p>
 		</div>
 		<div class="col-lg-12">
-			<span class="timestamp" style="float:left">Author: <%= @user.name  %></span>
-			<span class="timestamp" style="float: right	">Created at: <%= time_ago_in_words(@entry.created_at)  %> ago</span>
+			<span class="timestamp" style="float: right	">Created by <%= link_to @user.name, @user  %> at <%= time_ago_in_words(@entry.created_at)  %> ago</span>
 		</div>
 		<div class="col-lg-12" style="padding-top:50px; padding-bottom: 20px;">
 			<label>Comments</label>
@@ -31,9 +30,9 @@
 			<ul class="list-entry">
 				<% @comments.each do |comment|  %>
 				<li>
-					<span style="font-weight:bold"><%= comment.user.name  %></span>
 					<span class="entry-body"><%= comment.content  %> </span>
-					<span class="timestamp" style="float:right">Posted <%= time_ago_in_words(comment.created_at)  %> ago </span>
+					<span class="timestamp" style="float:right">Posted by 
+					<%= link_to comment.user.name, comment.user  %> <%= time_ago_in_words(comment.created_at)  %> ago </span>
 				</li>
 				<% end %>
 			</ul>

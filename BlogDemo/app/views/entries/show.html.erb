@@ -1,6 +1,6 @@
 <%= provide(:title,"Entry")  %>
 <div class="row">
-	<div class="col-lg-offset-2 col-lg-8">
+	<div class="col-lg-offset-2 col-lg-8" style="color:">
 		<div class="col-lg-12">
 			<h1><%= @entry.title  %></h1>
 		</div>
@@ -25,14 +25,23 @@
 			<% end %>
 		</div>
 		<% end %>
-		<div class="col-lg-12">
+		<div class="col-lg-12" style="margin-top:10px;">
 			<% if @comments.any? %>
 			<ul class="list-entry">
 				<% @comments.each do |comment|  %>
-				<li>
-					<span class="entry-body"><%= comment.content  %> </span>
-					<span class="timestamp" style="float:right">Posted by 
-					<%= link_to comment.user.name, comment.user  %> <%= time_ago_in_words(comment.created_at)  %> ago </span>
+				<li class="col-lg-12" >
+					<div class="col-lg-12">
+						<div class="col-lg-2" style="padding:0px;">
+							<%= gravatar_for(comment.user)%>
+						</div>
+						<div class="col-lg-10" style="padding:0px; margin-left:-25px;">
+							<span><%= link_to comment.user.name, comment.user  %></span>
+							<span class="entry-body"><%= comment.content  %> </span>
+						</div>
+					</div>
+					<div class="col-lg-12" style="text-align:right">
+						<span class="timestamp" > <%= time_ago_in_words(comment.created_at)  %> ago </span>
+					</div>
 				</li>
 				<% end %>
 			</ul>

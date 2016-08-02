@@ -2,10 +2,12 @@ $light-gray: #777;
 $border-color: #eaeaea;
 body {
 	padding-top: 80px;
+	background-color: #e9ebee;
 }
 h1 {
 	text-align: center;
 }
+
 
 /*header*/
 
@@ -51,4 +53,11 @@ h1 {
 .list-entry li {
 	border-top: 1px solid $border-color;
 	padding: 10px 0;
+}
+.list-entry li a:hover {
+	text-decoration: none;
+}
+.list-entry .col-lg-12{
+	padding: 0px ;
+	padding-top: 5px;
 }

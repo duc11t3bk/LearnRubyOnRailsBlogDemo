@@ -4,7 +4,6 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Sign up", signup_path  %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path  %></li>
           <li class="dropdown">
@@ -13,7 +12,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user  %></li>
-              <li><%= link_to "Settings", "#"  %></li>
+              <li><%= link_to "New entry", new_entry_path  %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Sign out", signout_path, method: "delete"  %>
@@ -21,6 +20,7 @@
             </ul>
           </li>
         <% else %>
+          <li><%= link_to "Sign up", signup_path  %></li>
           <li><%= link_to "Sign in", signin_path  %></li>
         <% end %>
       </ul>

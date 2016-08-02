@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 			redirect_to request.referrer || root_url
 		else
-			@feed_items=[]
-			render "static_pages/home"
+			render entry_path(@comment.entry.id)
 		end
 	end
 

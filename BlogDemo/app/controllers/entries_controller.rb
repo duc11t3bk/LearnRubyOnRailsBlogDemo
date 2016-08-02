@@ -18,7 +18,7 @@ class EntriesController < ApplicationController
 			flash[:success]= "Entry created!"
 			redirect_to root_url
 		else
-			render root_path
+			render "new"
 		end
 	end
 
